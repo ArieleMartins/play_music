@@ -1,0 +1,8 @@
+.container{
+    background-color: #2A2141;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}

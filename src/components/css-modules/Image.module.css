@@ -1,0 +1,11 @@
+.image{
+    width: 100%;
+    max-width: 170px;
+    border-radius: 10px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
