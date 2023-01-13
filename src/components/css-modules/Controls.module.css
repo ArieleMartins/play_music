@@ -18,3 +18,11 @@
 .container button:hover{
     color: white;
 }
+
+@media(max-width:610px){
+    .container{
+        display: flex;
+        column-gap: 60px; 
+    }
+    
+}

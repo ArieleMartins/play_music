@@ -5,7 +5,7 @@ function Image({image, alt}){
     return (
         <div className={styles.container}>
             <img src={image} alt={alt} className={styles.image} />
-            <Text music='Acorda Devinho' banda='Banda Rocketseat'/>
+            <Text music='Losing My Mind' banda='NEFFEX'/>
         </div>
     )
 }

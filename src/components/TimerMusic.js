@@ -1,22 +1,19 @@
-import React, { useRef, useLayoutEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import styles from './css-modules/TimerMusic.module.css'
 
-function TimerMusic(){
-    const element = useRef()
-    
-    useLayoutEffect(()=>{
-        const range = element.current
-        range.addEventListener('mousemove',()=>{
-            eventRange(range)
-        })
-    })
+var value = 0
 
+function TimerMusic({ audio }){
+   useEffect(()=>{
+        const durationElement = document.getElementById('duration')
+        durationElement.innerText = durationAudio(audio.duration)
+   })
     return(
         <div  className={styles.container}>
-            <input type="range" id='range' ref={element}/>
+            <input type="range" id='range' onChange={(event)=>{eventRange(event.target, audio)}} step='1' />
             <div>
-                <span></span>
-                <span></span>
+                <span id='time'>00:00</span>
+                <span id='duration'>00:00</span>
             </div>
         </div>
     )
@@ -24,8 +21,16 @@ function TimerMusic(){
 
 export default TimerMusic
 
-function eventRange(range){
-    var value = range.value
-    range.style.background = `linear-gradient(90deg, #d9d9d9 ${value}%, #d9d9d954 ${value}%)`   
+function eventRange(range, audio){
+    range.setAttribute('max', audio.duration)
+    var checkValue = range.max / 100
+    value = range.value / checkValue 
+    audio.currentTime = range.value
+    range.style.background = `linear-gradient(90deg, #d9d9d9 ${value}%, #d9d9d954 ${value}%)`
 }
 
+export function durationAudio(duration){
+    var minutes = Math.floor(duration / 60)
+    var seconds = Math.floor(duration - minutes * 60)
+    return `${('0' + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`
+}

@@ -10,7 +10,7 @@
     -webkit-appearance: none;
     appearance: none;
     outline: none;
-    background: linear-gradient(90deg, #d9d9d9 60%, #d9d9d954 60%);
+    background: linear-gradient(90deg, #d9d9d9 0%, #d9d9d954 0%);
     border-radius: 10px;
     height: 10px;
 }
@@ -18,21 +18,20 @@
 
 .container input::-webkit-slider-runnable-track{
     width: 100%;
-    height: 10px;
+    height: 8px;
 }
 
 .container input::-moz-range-track{
     width: 100%;
-    height: 10px;
+    height: 8px;
 }
 
 .container input::-webkit-slider-thumb{
     -moz-appearance: none;
     appearance: none;
     -webkit-appearance: none;
-    width: 15px;
-    height: 10px;
-    background-color: #d9d9d9;
+    width: 0;
+    height: 0;
     border-radius: 50%;
     outline: none;
 }
@@ -40,16 +39,20 @@
 .container input::-moz-range-thumb{
     -moz-appearance: none;
     appearance: none;
-    width: 15px;
-    height: 10px;
-    background-color: #d9d9d9;
-    border-radius: 50%;
+    border-radius: 10px;
+    width: 0;
+    height: 0;
     outline: none;
     border: 0;
 }
+
 
 .container div{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.4045px;
+    color: #C4C4CC;
 }

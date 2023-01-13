@@ -9,3 +9,14 @@
     align-items: center;
     column-gap: 30px;
 }
+
+@media(max-width:610px){
+    .container{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    .image{
+        width: 100%;
+        max-width: 240px;
+    }
+}
